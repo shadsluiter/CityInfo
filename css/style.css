@@ -2,26 +2,22 @@ body {
 	margin:1rem;
 }
 
-li {
-	text-decoration: none;
-	background: #ccc;
-	padding: 0.5rem;
-	border: 1 solid black;
-	border-radius: 5px;
-	list-style: none;
-	margin: 1rem;
+.white-space-pre {
+    white-space: pre-wrap;
+}
+.newrow {
+	algin: 0 auto;
 }
 
-
-ul li .edit {
-	display:none;
+form {
+	margin:auto;
+	width:80%;
 }
 
-
-ul li.edit .edit {
-	display:initial;
+.apptitle {
+	text-align: center;
 }
 
-ul li.edit .noedit {
-	display:none;
+#output {
+	margin:1rem;
 }

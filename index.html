@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Find a city</title>
+	<title>Song Lyrics Lookup</title>
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
+	<div class="apptitle">
+		<h1 class="apptitle">Lyrics Locator</h1>
+		<p>Enter the name of an artist and a song title.  I will show you the lyrics</p>
 
-	<h1>City Locator</h1>
-	<p>Enter the name of a city.  I will tell you where it is located</p>
-	<label for="cityname">City Name</label>
-	<input type="text" name="cityname" id="cityname" placeholder="Des Moines, IA">
-	<button type="button" name="button" id="citybutton">Find City</button>
+	</div>
+		<form class="form-horizontal">
 
-	<template id="city-template">
-		<p>City address: {{formatted_address}}</p>
-		<p>Lat: {{geometry.location.lat}}</p>
-		<p>Long: {{geometry.location.lng}}</p>
+	<p>
+		<label for="artistname">Artist Name</label>
+	<input class="form-control" type="text" name="artistname" id="artistname" placeholder="Taylor Swift">
+</p>
+<p>
+	<label for="songtitle">Song title</label>
+	<input class="form-control" type="text" name="songtitle" id="songtitle" placeholder="Shake it off">
+</p>
+	<button class="btn btn-primary btn-block" type="submit" name="button" id="getapibutton">Find Lyrics</button>
 
-		<p>County: {{address_components.1.long_name}}</p>
-		<p>Country: {{address_components.3.long_name}}</p>
+</form>
+	<template id="template">
+
+		<p>Lyrics: {{lyrics_body}}</p>
 
 
 
@@ -28,35 +35,12 @@
 	</template>
 
 
-
-
-<template id="friend-template">
-	<li data-id= {{id}}>
-		<p>
-			<strong>name:</strong>
-			<span class="noedit name">{{name}}</span>
-			<input class="edit name"/>
-		</p>
-		<p>
-			<strong>age: </strong>
-			<span class="noedit age">{{age}}</span>
-			<input class="edit age"/>
-		</p>
-		<p>
-
-				<button class="editfriend noedit">Edit</button>
-				<button class="canceledit edit">Cancel</button>
-				<button class="saveedit edit">Save</button>
-				<button class='remove' data-id='{{id}}'>Del</button>
-
-
-
-		</p>
-	</li>
-</template>
-
-	<div id="city-list">
-
+	<div class="newrow"></div>
+	<div id="output">
+				<div class="panel panel-default">
+				  <div id="artistplacement" class="panel-heading">I will show</div>
+				  <div id="songplacement"  class="panel-body">the lyrics here</div>
+				</div>
 	</div>
 
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
