@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find a city</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+	<h1>City Locator</h1>
+	<p>Enter the name of a city.  I will tell you where it is located</p>
+	<label for="cityname">City Name</label>
+	<input type="text" name="cityname" id="cityname" placeholder="Des Moines, IA">
+	<button type="button" name="button" id="citybutton">Find City</button>
+
+	<template id="city-template">
+		<p>City address: {{formatted_address}}</p>
+		<p>Lat: {{geometry.location.lat}}</p>
+		<p>Long: {{geometry.location.lng}}</p>
+
+		<p>County: {{address_components.1.long_name}}</p>
+		<p>Country: {{address_components.3.long_name}}</p>
+
+
+
+
+	</template>
+
+
+
+
+<template id="friend-template">
+	<li data-id= {{id}}>
+		<p>
+			<strong>name:</strong>
+			<span class="noedit name">{{name}}</span>
+			<input class="edit name"/>
+		</p>
+		<p>
+			<strong>age: </strong>
+			<span class="noedit age">{{age}}</span>
+			<input class="edit age"/>
+		</p>
+		<p>
+
+				<button class="editfriend noedit">Edit</button>
+				<button class="canceledit edit">Cancel</button>
+				<button class="saveedit edit">Save</button>
+				<button class='remove' data-id='{{id}}'>Del</button>
+
+
+
+		</p>
+	</li>
+</template>
+
+	<div id="city-list">
+
+	</div>
+
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+	<script src="js/javascript.js"></script>
+	<script src="node_modules/mustache/mustache.min.js"></script>
+
+	</body>
+</html>
